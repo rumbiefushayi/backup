@@ -6,40 +6,83 @@
 <body>
      <script>
 
-     	function Person(name, age){
+     	function Person(name, age,gender){
  				 this.name = name;
   				 this.age = age;
   				 this.gender= gender
 
           this.greeting = function(){
-              document.write("");
+              document.write("My name is " + name + " and im a " + gender + " aged "  + age + ".</br>");
  			 }
 		}
 
-          var Patricia = new Person("Patricia", 26, "female");
-          var Belinda = new Person("Liar her name is Fortunate", 23, "female");
-          var Shallom = new Person("Shallom", 20, "female");
-          var Joy = new Person("Joy", 24, "female")
-          var Sipa = new Person("Sipa", 25, "female")
-          var Yvonne = new Person("Yvonne", 24, "female")
-          var Rumbie = new Person("Rumbie", 24, "female")
-          var Mellody = new Person("Mellody", 23, "female")
-          var Graciuos = new Person("Graciuos", 23, "female")
-          var Tau = new Person("Tau", 24, "male")
-          var Tatenda = new Person("Tatenda", 22, "male")
+          var patricia = new Person("Patricia", 26, "female");
+          var belinda = new Person("Liar her name is Fortunate", 23, "female");
+          var shallom = new Person("Shallom", 20, "female");
+          var joy = new Person("Joy", 24, "female")
+          var sipa = new Person("Sipa", 25, "female")
+          var yvonne = new Person("Yvonne", 24, "female")
+          var rumbie = new Person("Rumbie", 24, "female")
+          var mellody = new Person("Mellody", 23, "female")
+          var gracious = new Person("Gracious", 23, "female")
+          var tau = new Person("Tau", 24, "male")
+          var tatenda = new Person("Tatenda", 22, "male")
+          patricia.greeting();
+          belinda.greeting();
+          shallom.greeting();
+          joy.greeting();
+          sipa.greeting();
+          yvonne.greeting();
+          rumbie.greeting();
+          mellody.greeting();
+          gracious.greeting();
+          tau.greeting();
+          tatenda.greeting();
+
+        function Classroom(name,students){
+        	this.name = name;
+        	this.students = students;
+   
+
+        	this.divas= function(){
+        		var text = "</br> These are the females in our class: <br/> <ul>";
+
+        			for(i=0; i<this.students.length; i++){
+        				if(this.students[i].gender == "female")//validating the code is important
+        				{
+        					text += "<li>";
+        					text += this.students[i].name
+        					text += "</li>"
+        				}
+        		}
+
+                 text += "</ul>"
+        		document.write(text);
+        	}
+
+        	this.maNinja = function(){
+        		var text = "<br> and these are the only males in there: <br/> <ul>"
 
 
+        		   for (i=0; i<this.students.length; i++){
+        		   	   if(this.students[i].gender == "male"){
+	                       text += "<li>"
+	                       text += this.students[i].name
+	                       text += "</li>"
+                        }
+                    }
 
-         function Classroom(name, [students]){
-         	      this.name =Micro Work Space
-                  
-                 this.Divas = function(){
-
-              }   
-
-         }
-
-
+        		   text += "</ul>"
+        		   document.write(text);
+        	}
+        }
+   		 
+            //class array
+      var class1 = new Classroom("Micro Work Space", [patricia, belinda, shallom, joy, sipa, yvonne, rumbie, mellody, gracious, tau, tatenda]);
+  
+             class1.divas();
+             class1.maNinja();
+  
 
      </script>
 </body>
